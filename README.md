@@ -1,24 +1,28 @@
 # zixcel-version-control
 
-`zixcel-version-control` owns bounded, read-only observations of a local
-version-control workspace. It does not define project compilation, decide that
-work is complete, authenticate to a remote service, push, fetch, run hooks, or
-copy source content.
+Read the state of a local version-control workspace for a caller that needs change evidence.
 
-The provider-neutral `SourceRevisionObservation` remains useful without Git.
-The included Git adapter maps immutable commit/tree identities and the current
-worktree state onto that contract. Branch names are mutable display hints only.
-Remote GitHub/GitLab APIs remain separate provider packages.
+## What you can do
 
-An absent repository is `Ok(None)`: consumers must preserve their non-versioned
-workflow. An explicitly selected but broken repository returns a typed error.
+- Inspect local repository metadata.
+- Return a bounded observation for review.
 
-```bash
-cargo test
+## Current scope
+
+This observer does not fetch, push, run hooks or change the working tree.
+
+Package distribution is not activated by this documentation. Use the checked-in source and the declared dependency versions; published availability must be verified separately.
+
+## Getting started
+
+Install Rust 1.97 or newer and make the declared dependencies available. Use the configured private registry when a dependency is not distributed publicly. Run from this repository:
+
+```sh
+cargo test --locked
 ```
 
-## Package integration
+## Documentation and source
 
-The package is an independently consumable unit. Callers reference its documented
-interface through a versioned dependency and own application-specific composition
-and integration.
+[Usage guide](docs/getting-started.md)
+
+[Implementation and public interfaces](src) · [Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) · [License](LICENSE) · [Attribution notices](NOTICE)
