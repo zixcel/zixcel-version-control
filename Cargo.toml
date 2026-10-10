@@ -1,4 +1,5 @@
 [package]
+repository = "https://github.com/zixcel/zixcel-version-control"
 exclude = ["*.tgz", "**/*.tgz", "/registration/**", "/state/**", "/.local/**", "/.state/**", "/.data/**", "/secrets/**", "/credentials/**", "/.env", "/.env.production", "/.env.local", "/*.tgz", "/*.tar.gz", "/*.tar", "/*.zip", "/*.whl", "/*.crate", "/.ruff_cache/**", "/.mypy_cache/**", "/.tox/**", "/.nox/**", "/.hypothesis/**", "/.coverage", "/.coverage.*", "/htmlcov/**", "/lcov.info", "/junit.xml", "/*.profraw", "/*.profdata", "/*.egg-info/**", "/target/**", "/node_modules/**", "/dist/**", "/build/**", "/.cache/**", "/.pytest_cache/**", "/coverage/**"]
 name = "zixcel-version-control"
 version = "0.10.0"
@@ -7,7 +8,7 @@ rust-version = "1.97"
 description = "Provider-neutral version-control observations and a bounded local Git adapter"
 license = "Apache-2.0"
 readme = "README.md"
-publish = ["zixcel-private"]
+publish = ["crates-io"]
 
 [package.metadata.zixcel]
 boundary = "version-control-observation"
